@@ -6,17 +6,24 @@ require_relative 'restricted_array.rb'
 
 # Calculates the length of the restricted array. All values are integers.
 # The restricted_array is terminated by 'nil' i.e. array[length] = nil
-# Time complexity: ?
+# Time complexity: O(n)
 # Space complexity: ?
 def length(array)
-  raise NotImplementedError
+  i = 0
+  until array[i] == nil 
+    i += 1
+  end 
+  return i
 end
 
 # Prints each integer values in the array
-# Time complexity: ?
+# Time complexity: O(n)
 # Space complexity: ?
 def print_array(array)
-  raise NotImplementedError
+  until array[i] == nil 
+    puts array[i] 
+    i += 1
+  end
 end
 
 # For an unsorted array, searches for 'value_to_find'.
