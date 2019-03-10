@@ -1,8 +1,8 @@
-require 'minitest/autorun'
-require 'minitest/reporters'
-require 'minitest/skip_dsl'
-require_relative '../lib/restricted_array'
-require_relative '../lib/using_restricted_array'
+require "minitest/autorun"
+require "minitest/reporters"
+require "minitest/skip_dsl"
+require_relative "../lib/restricted_array"
+require_relative "../lib/using_restricted_array"
 
 describe "restricted array" do
   it "length method" do
@@ -67,7 +67,7 @@ describe "restricted array" do
     largest.must_equal my_integer_array[size - 1]
   end
 
-it "find smallest in unsorted array" do
+  it "find smallest in unsorted array" do
     size = 12
     my_integer_array = RestrictedArray.new(size)
 
@@ -87,7 +87,7 @@ it "find smallest in unsorted array" do
     smallest.must_equal my_integer_array[0]
   end
 
-  xit "reverse array - odd count" do
+  it "reverse array - odd count" do
     size = 9
     my_integer_array = RestrictedArray.new(size)
     test_array = Array.new(size)
@@ -104,7 +104,7 @@ it "find smallest in unsorted array" do
     end
   end
 
-  xit "reverse array - even count" do
+  it "reverse array - even count" do
     size = 8
     my_integer_array = RestrictedArray.new(size)
     test_array = Array.new(size)
@@ -172,7 +172,7 @@ it "find smallest in unsorted array" do
     size.times do |i|
       my_integer_array[i] = i * 10
     end
-    value_to_find = (size/2) * 10
+    value_to_find = (size / 2) * 10
 
     binary_search(my_integer_array, size, value_to_find).must_equal true
   end

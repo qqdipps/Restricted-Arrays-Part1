@@ -1,4 +1,4 @@
-require_relative 'restricted_array.rb'
+require_relative "restricted_array.rb"
 # RestrictedArray can be created using a specified size, or a random size in
 # the range of 1-20 will be chosen for you.
 # All values are integers in the range of 1-221.
@@ -10,9 +10,9 @@ require_relative 'restricted_array.rb'
 # Space complexity: ?
 def length(array)
   i = 0
-  until array[i] == nil 
+  until array[i] == nil
     i += 1
-  end 
+  end
   return i
 end
 
@@ -21,8 +21,8 @@ end
 # Space complexity: ?
 def print_array(array)
   i = 0
-  until array[i] == nil 
-    puts array[i] 
+  until array[i] == nil
+    puts array[i]
     i += 1
   end
 end
@@ -32,9 +32,9 @@ end
 # Time complexity: O(n)
 # Space complexity: ?
 def search(array, length, value_to_find)
-  length.times do |i| 
+  length.times do |i|
     return true if array[i] == value_to_find
-  end 
+  end
   return false
 end
 
@@ -43,10 +43,10 @@ end
 # Time complexity: O(n)
 # Space complexity: ?
 def find_largest(array, length)
-  max = array[0] 
-  length.times do |i| 
-    max = array[i] if array[i] > max 
-  end 
+  max = array[0]
+  length.times do |i|
+    max = array[i] if array[i] > max
+  end
   return max
 end
 
@@ -55,18 +55,23 @@ end
 # Time complexity: O(n)
 # Space complexity: ?
 def find_smallest(array, length)
-  min = array[0] 
-  length.times do |i| 
+  min = array[0]
+  length.times do |i|
     min = array[i] if array[i] < min
-  end 
+  end
   return min
 end
 
 # Reverses the values in the integer array in place
-# Time complexity: ?
+# Time complexity: O(n)
 # Space complexity: ?
 def reverse(array, length)
-  raise NotImplementedError
+  (length / 2).times do |i|
+    swap_index = length - 1 - i
+    temp = array[i]
+    array[i] = array[swap_index]
+    array[swap_index] = temp
+  end
 end
 
 # For an array sorted in ascending order, searches for 'value_to_find'.
@@ -94,7 +99,7 @@ end
 def sort(array, length)
   length.times do |index| # outer loop - n elements
     min_index = index # assume index is where the next minimally value is
-    temp_index = index+1 # compare with values at index+1 to length-1
+    temp_index = index + 1 # compare with values at index+1 to length-1
     while temp_index < length # inner loop - n-1 elements
       if array[temp_index] < array[min_index] # found a new minimum, update min_index
         min_index = temp_index
@@ -108,4 +113,5 @@ def sort(array, length)
     end
   end
 end
+
 ## --- END OF METHODS ---
