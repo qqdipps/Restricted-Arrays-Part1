@@ -43,7 +43,11 @@ end
 # Time complexity: ?
 # Space complexity: ?
 def find_largest(array, length)
-
+  max = array[0] 
+  length.times do |i| 
+    max = array[i] if array[i] > max 
+  end 
+  return max
 end
 
 # Finds and returns the smallest integer value in the array
