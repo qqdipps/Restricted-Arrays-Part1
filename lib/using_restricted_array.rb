@@ -40,7 +40,7 @@ end
 
 # Finds and returns the largest integer value the array
 # Assumes that the array is not sorted.
-# Time complexity: ?
+# Time complexity: O(n)
 # Space complexity: ?
 def find_largest(array, length)
   max = array[0] 
@@ -52,10 +52,14 @@ end
 
 # Finds and returns the smallest integer value in the array
 # Assumes that the array is not sorted.
-# Time complexity: ?
+# Time complexity: O(n)
 # Space complexity: ?
 def find_smallest(array, length)
-  raise NotImplementedError
+  min = array[0] 
+  length.times do |i| 
+    min = array[i] if array[i] < min
+  end 
+  return min
 end
 
 # Reverses the values in the integer array in place
