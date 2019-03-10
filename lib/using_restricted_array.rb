@@ -20,6 +20,7 @@ end
 # Time complexity: O(n)
 # Space complexity: ?
 def print_array(array)
+  i = 0
   until array[i] == nil 
     puts array[i] 
     i += 1
@@ -28,10 +29,13 @@ end
 
 # For an unsorted array, searches for 'value_to_find'.
 # Returns true if found, false otherwise.
-# Time complexity: ?
+# Time complexity: O(n)
 # Space complexity: ?
 def search(array, length, value_to_find)
-  raise NotImplementedError
+  length.times do |i| 
+    return true if array[i] == value_to_find
+  end 
+  return false
 end
 
 # Finds and returns the largest integer value the array
@@ -39,7 +43,7 @@ end
 # Time complexity: ?
 # Space complexity: ?
 def find_largest(array, length)
-  raise NotImplementedError
+
 end
 
 # Finds and returns the smallest integer value in the array
