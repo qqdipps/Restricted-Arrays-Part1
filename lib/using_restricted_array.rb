@@ -10,7 +10,7 @@ require_relative "restricted_array.rb"
 # Space complexity: O(1)
 def length(array)
   i = 0
-  until array[i] == nil
+  while array[i]
     i += 1
   end
   return i
@@ -21,7 +21,7 @@ end
 # Space complexity: O(1)
 def print_array(array)
   i = 0
-  until array[i] == nil
+  while array[i]
     puts array[i]
     i += 1
   end
@@ -67,10 +67,9 @@ end
 # Space complexity: O(1)
 def reverse(array, length)
   (length / 2).times do |i|
-    swap_index = length - 1 - i
-    temp = array[i]
-    array[i] = array[swap_index]
-    array[swap_index] = temp
+    array[i] = array[i] + array[length - i - 1]
+    array[length - i - 1] = array[i] - array[length - i - 1]
+    array[i] = array[i] - array[length - i - 1]
   end
 end
 
